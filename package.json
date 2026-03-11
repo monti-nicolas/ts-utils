@@ -21,7 +21,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint src tests --ext .ts",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc --noEmit && tsc --noEmit --project tsconfig.test.json",
     "size": "size-limit",
     "prepublishOnly": "npm run typecheck && npm run test && npm run build"
   },

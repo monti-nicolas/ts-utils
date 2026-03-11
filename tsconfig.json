@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    /* Language & Environment */
+    "target": "ES2019",              // Supports modern browsers without being bleeding edge
+    "lib": ["ES2019", "DOM"],        // DOM included so utilities can be used in browser SDKs
+
+    /* Modules */
+    "module": "ESNext",
+    "moduleResolution": "bundler",   // Works with tsup/esbuild
+    "esModuleInterop": true,
+
+    /* Output */
+    "outDir": "dist",
+    "declaration": true,             // Emit .d.ts type definition files
+    "declarationMap": true,          // Source maps for type definitions (helps IDE navigation)
+    "sourceMap": true,
+
+    /* Strict Mode — all of it, no exceptions */
+    "strict": true,                  // Enables all strict checks below as a group
+    "noUncheckedIndexedAccess": true, // arr[0] is T | undefined, not T — forces you to handle it
+    "noImplicitReturns": true,       // Every code path in a function must return a value
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true, // {a?: string} means string, not string | undefined
+
+    /* Quality */
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "tests"]
+}

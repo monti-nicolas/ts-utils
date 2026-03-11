@@ -1,0 +1,58 @@
+{
+  "name": "@monti-nicolas/ts-utils",
+  "version": "0.1.0",
+  "description": "A zero-dependency TypeScript utility library — typed event emitter, retry/backoff, rate limiter, in-memory cache, and structured logger.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "lint": "eslint src tests --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "size": "size-limit",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "keywords": [
+    "typescript",
+    "utils",
+    "sdk",
+    "event-emitter",
+    "retry",
+    "cache",
+    "logger",
+    "rate-limiter"
+  ],
+  "author": "Nicolas Monti",
+  "license": "MIT",
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^11.0.0",
+    "@types/jest": "^29.5.12",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "size-limit": "^11.0.0",
+    "ts-jest": "^29.4.6",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "size-limit": [
+    {
+      "path": "dist/index.mjs",
+      "limit": "10 KB"
+    }
+  ]
+}

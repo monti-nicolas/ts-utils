@@ -8,7 +8,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
   parserOptions: {
-    project: './tsconfig.json',
+    project: ['./tsconfig.json', './tsconfig.test.json'],
   },
   rules: {
     // Enforce explicit return types on exported functions — important for a library
